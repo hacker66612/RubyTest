@@ -17,18 +17,23 @@ def repeat (hello , number=2)
 	
 	
 	
-	def start_of_word word , num    #Bob 2
-	array = 0
-	num1=num -1
-	while num1 != array 
-		
-		word1=word[num1]
-		num1=num1-1
-		word1=word1+word1[num1]
-		num1=num1-1
-		end	
-		word1= word1.reverse
+	def start_of_word word , num 
+		 word[0...num]
 	end
 	
 	
-start_of_word("Hello" , 3)				
+def first_word string 
+	string.split[0]
+	end				
+
+def titleize word 
+	 wordArray = word.split(" ")
+	 littleWords = ["a", "an", "the", "at", "by", "for", "in", "of", "on", "to", "up", "and", "as", "but", "or",  "nor", "over"]
+	 wordArray.each_index do |x|
+		 if not (littleWords.include?(wordArray[x])) or x==0 then
+		 wordArray[x].capitalize!
+		 end
+		 end
+		 wordArray.join(" ")
+		 	 
+	end
